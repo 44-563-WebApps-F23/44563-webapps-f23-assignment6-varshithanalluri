@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LAB 6  JS tips </title>
+        </head> 
+<body>
+
+<h2> Nalluri Varshitha shows tip
+    amounts </h2>
+    <form>
+    <label for="baseAmount">Enter base amount:</label>
+    <input type="number" id="baseAmount" name="baseamount" value="50"><br>
+    <label for="tipPercent">Enter the tip percent</label>
+    <input type="number" id="tipPercent" name="tipPercent" value="15"><br>
+    <button onclick="tips()">Show tip</button>
+</form>
+    <p id="result"></p>
+    <script>
+        function tips(){
+
+            let baseamount = parseFloat(document.getElementById("baseamount").value);
+            let tipPer= parseFloat(document.getElementById("tipPer").value);
+           // let result = document.getElementById("result");
+            let myOutput = "";
+            for (let i = 0; i < 5; i++) {
+                let calculatedTip = (baseamount * (tipPer + i * 4)) / 100;
+                myOutput += "${tipPer+ i * 4}% is ${tipAmount.toFixed(2)}; ";
+            }
+            const resultElement = document.getElementById("result");
+            resultElement.innerHTML = "Tips are: " + myOutput;
+        }
+    </script>
+
+
+
+</script>
+</body>
+</html> 
