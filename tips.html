@@ -16,18 +16,17 @@
 </form>
     <p id="result"></p>
     <script>
-        function tips(){
-
-            let baseamount = parseFloat(document.getElementById("baseamount").value);
-            let tipPer= parseFloat(document.getElementById("tipPer").value);
-           // let result = document.getElementById("result");
-            let myOutput = "";
-            for (let i = 0; i < 5; i++) {
-                let calculatedTip = (baseamount * (tipPer + i * 4)) / 100;
-                myOutput += "${tipPer+ i * 4}% is ${tipAmount.toFixed(2)}; ";
+        function tips() {
+            const baseAmount = parseFloat(document.getElementById("baseAmount").value);
+            const tipPercent = parseFloat(document.getElementById("tipPercent").value);
+            let toShow = "";
+for (let i = 0; i < 5; i++) {
+                const tipAmount = (baseAmount * (tipPercent + i * 4)) / 100;
+                toShow += `${tipPercent + i * 4}% is ${tipAmount.toFixed(2)}; `;
             }
+
             const resultElement = document.getElementById("result");
-            resultElement.innerHTML = "Tips are: " + myOutput;
+            resultElement.innerHTML = "Tips are: " + toShow;
         }
     </script>
 
