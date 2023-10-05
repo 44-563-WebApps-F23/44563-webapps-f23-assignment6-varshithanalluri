@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ass 6 js </title>
+    <title>ASS 6 JS</title>
 </head>
 <body>
-    <h1>Varshitha Nalluri  Shows Tip Amounts</h1>
+    <h1>Varshitha Nalluri Shows Tip Amounts</h1>
 
     <!-- Input for the base amount -->
     <label for="baseAmount">Enter base amount:</label>
@@ -20,24 +20,23 @@
 
     <!-- Element to display tips -->
     <div id="tipResult">
-        <p>Tips are:</p>
+        <p>Tip are:</p>
     </div>
-    <br>
-    <hr>
+    
     <br>
     <!-- Radio buttons for calculations -->
     <form>
         <div>
-            <input type="radio" id="sum" name="calculation" value="sum" onclick="chooseOp()">
             <label for="sum">Sum</label>
+            <input type="radio" id="sum" name="calculation" value="sum" onclick="chooseOp()">
         </div>
         <div>
-            <input type="radio" id="diff" name="calculation" value="difference" onclick="chooseOp()">
             <label for="diff">Difference</label>
+            <input type="radio" id="diff" name="calculation" value="difference" onclick="chooseOp()">
         </div>
         <div>
-            <input type="radio" id="mult" name="calculation" value="product" onclick="chooseOp()">
             <label for="mult">Product</label>
+            <input type="radio" id="mult" name="calculation" value="product" onclick="chooseOp()">
         </div>
     </form>
     <br>
@@ -99,7 +98,7 @@
             }
 
             const operationResultElement = document.getElementById("operationResult");
-            operationResultElement.innerHTML = "Result:<br>" + result;
+            operationResultElement.innerHTML = "Output:<br>" + result;
             operationResultElement.style.display = "block";
         }
     </script>
