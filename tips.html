@@ -12,18 +12,21 @@
 <body>
     <h1>Varshitha Nalluri Shows Tip Amounts</h1>
 
-    <!-- Input for the base amount -->
-    <label for="baseAmount">Enter base amount:</label>
-    <input type="number" id="baseAmount" value="50"><br>
+    <div class="mb-3">
+        <label for="baseAmount" class="form-label">Enter base amount:</label>
+        <input type="number" id="baseAmount" value="50" class="form-control">
+    </div>
 
     <!-- Input for the tip percent -->
-    <label for="tipPercent">Enter the tip percent:</label>
-    <input type="number" id="tipPercent" value="15"><br>
+    <div class="mb-3">
+        <label for="tipPercent" class="form-label">Enter the tip percent:</label>
+        <input type="number" id="tipPercent" value="15" class="form-control">
+    </div>
 
     <!-- Button to calculate and show tips -->
-    <input type="button" onclick="tips()" value="Show tip"><br>
-    <br>
-
+    <div class="mb-3">
+        <input type="button" onclick="tips()" value="Show tip" class="btn btn-primary">
+    </div>
     <!-- Element to display tips -->
     <div id="tipResult">
         <p>Tip are:</p>
