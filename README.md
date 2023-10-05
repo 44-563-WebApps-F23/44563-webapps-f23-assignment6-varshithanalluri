@@ -1,8 +1,8 @@
 Hosted at
-("https://github.com/44-563-WebApps-F23/44563-webapps-f23-assignment6-varshithanalluri/blob/main/author.html")
+("https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-varshithanalluri/author.html")
 
 Hosted at
-("https://github.com/44-563-WebApps-F23/44563-webapps-f23-assignment6-varshithanalluri/blob/main/tips.html")
+("https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-varshithanalluri/tips.html")
 
 Hosted at
-("https://github.com/44-563-WebApps-F23/44563-webapps-f23-assignment6-varshithanalluri/blob/main/cruise.html")
+("https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-varshithanalluri/cruise.html")
