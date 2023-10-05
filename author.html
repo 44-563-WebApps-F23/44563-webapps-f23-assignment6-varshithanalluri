@@ -2,6 +2,12 @@
 <html>
 <head>
     <title>LAB 6 JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <style>
         .image {
             width: 100px; /* Corrected width value with 'px' units */
@@ -10,25 +16,53 @@
     </style>
 </head>
 <body>
-    <h1>Author entry Nalluri Varshitha</h1>
+    <!-- <h1>Author entry Nalluri Varshitha</h1>
     <h2>Guess the Author</h2>
     
     <form>
-        <label for="secretInput">The hidden author name:</label>
-        <input type="password" id="secretInput" name="secretInput" value="Dickens" required><br>
+        <div class="mb-3">
+            <label for="secretInput" class="form-label">The hidden author name:</label>
+            <input type="password" id="secretInput" name="secretInput" class="form-control" value="Dickens"
+                required>
+        </div>
 
-        <label for="guessInput">Guess the author:</label>
-        <input type="text" id="guessInput" name="guessInput" required><br>
+        <div class="mb-3">
+            <label for="guessInput" class="form-label">Guess the author:</label>
+            <input type="text" id="guessInput" name="guessInput" class="form-control" required>
+        </div>
 
-        <input type="button" onclick="checkAuthor()" value="Check the guess">
+        <button type="button" class="btn btn-primary" onclick="checkAuthor()">Check the guess</button>
     </form>
-
     <p id="result">Good: 0 | Oops: 0</p>
 
     <div class="image">
         <img id="Dispimage" src="City1.jpg" alt="City" onclick="selectImage()">   
     </div>
+ -->
+ <div class="container mt-5">
+    <h1 class="text-center">Author entry Nalluri Varshitha</h1>
+    <h2 class="text-center">Guess the Author</h2>
+    
+    <form>
+        <div class="mb-3">
+            <label for="secretInput" class="form-label">The hidden author name:</label>
+            <input type="password" id="secretInput" name="secretInput" class="form-control" value="Dickens" required>
+        </div>
 
+        <div class="mb-3">
+            <label for="guessInput" class="form-label">Guess the author:</label>
+            <input type="text" id="guessInput" name="guessInput" class="form-control" required>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="checkAuthor()">Check the guess</button>
+    </form>
+
+    <p id="result" class="text-center">Good: 0 | Oops: 0</p>
+
+    <div class="image text-center">
+        <img id="Dispimage" src="City1.jpg" alt="City" onclick="selectImage()" class="img-fluid">
+    </div>
+</div>
     <script>
         var good = 0;
         var oops = 0;
@@ -46,6 +80,14 @@
                 oops++;
                 incorrect++;
                 alert("Sorry");
+
+                if (incorrect >= 7) {
+                    // Replace the onclick property with a new function
+                    document.getElementById("result").innerHTML = "Good: " + good + " | Oops: " + oops;
+                    document.querySelector('input[type="button"]').onclick = function() {
+                        alert("Sorry, ran out of guesses.");
+                    }
+                }
             }
             const resultElement = document.getElementById("result");
             resultElement.innerHTML = "Good: " + good + " | Oops: " + oops;
