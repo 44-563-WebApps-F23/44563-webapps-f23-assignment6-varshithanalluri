@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>LAB 6  JS</title>
+    <title>LAB 6 JS</title>
     <style>
-        .image{
-            width:100;
-            height:100;
+        .image {
+            width: 100px; /* Corrected width value with 'px' units */
+            height: 100px; /* Corrected height value with 'px' units */
         }
     </style>
 </head>
@@ -14,19 +14,15 @@
     <h2>Guess the Author</h2>
     
     <form>
-        
         <label for="secretInput">The hidden author name:</label>
         <input type="password" id="secretInput" name="secretInput" value="Dickens" required><br>
 
-        
         <label for="guessInput">Guess the author:</label>
         <input type="text" id="guessInput" name="guessInput" required><br>
 
-        
         <input type="button" onclick="checkAuthor()" value="Check the guess">
     </form>
 
-    
     <p id="result">Good: 0 | Oops: 0</p>
 
     <div class="image">
@@ -34,15 +30,13 @@
     </div>
 
     <script>
-        
         var good = 0;
         var oops = 0;
         var useImage = 1;
         var incorrect = 0;
+        
         function checkAuthor() {
-            
             const secretValue = document.getElementById("secretInput").value;
-         
             const userGuess = document.getElementById("guessInput").value;
             
             if (userGuess === secretValue) {
@@ -56,10 +50,7 @@
             const resultElement = document.getElementById("result");
             resultElement.innerHTML = "Good: " + good + " | Oops: " + oops;
         }
-  
-    
 
-        
         function selectImage() {
             const image = document.getElementById("Dispimage");
             
@@ -76,16 +67,8 @@
                     image.src = "City2.jpg"; 
                     useImage = 1;
                     break;
-                
             }
-            
         }
-    </script> 
+    </script>
 </body>
 </html>
-
-
-
-
-
-   
