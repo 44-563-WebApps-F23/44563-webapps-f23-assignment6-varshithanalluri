@@ -1,37 +1,107 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>LAB 6  JS tips </title>
-        </head> 
+<head>
+    <title>ass 6 js </title>
+</head>
 <body>
+    <h1>Varshitha Nalluri  Shows Tip Amounts</h1>
 
-<h2> Nalluri Varshitha shows tip
-    amounts </h2>
-    <form>
+    <!-- Input for the base amount -->
     <label for="baseAmount">Enter base amount:</label>
-    <input type="number" id="baseAmount" name="baseamount" value="50"><br>
-    <label for="tipPercent">Enter the tip percent</label>
-    <input type="number" id="tipPercent" name="tipPercent" value="15"><br>
-    <button onclick="tips()">Show tip</button>
-</form>
-    <p id="result"></p>
+    <input type="number" id="baseAmount" value="50"><br>
+
+    <!-- Input for the tip percent -->
+    <label for="tipPercent">Enter the tip percent:</label>
+    <input type="number" id="tipPercent" value="15"><br>
+
+    <!-- Button to calculate and show tips -->
+    <input type="button" onclick="tips()" value="Show tip"><br>
+    <br>
+
+    <!-- Element to display tips -->
+    <div id="tipResult">
+        <p>Tips are:</p>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <!-- Radio buttons for calculations -->
+    <form>
+        <div>
+            <input type="radio" id="sum" name="calculation" value="sum" onclick="chooseOp()">
+            <label for="sum">Sum</label>
+        </div>
+        <div>
+            <input type="radio" id="diff" name="calculation" value="difference" onclick="chooseOp()">
+            <label for="diff">Difference</label>
+        </div>
+        <div>
+            <input type="radio" id="mult" name="calculation" value="product" onclick="chooseOp()">
+            <label for="mult">Product</label>
+        </div>
+    </form>
+    <br>
+    <!-- Element to display operation result -->
+    <div id="operationResult" style="display: none;">
+        <p>Result:</p>
+    </div>
+
     <script>
+        // Function to format numbers without trailing zeros
+        function formatNumber(value) {
+            return parseFloat(value).toString().replace(/(\.[0-9]*[1-9])0+$/, "$1");
+        }
+
         function tips() {
             const baseAmount = parseFloat(document.getElementById("baseAmount").value);
             const tipPercent = parseFloat(document.getElementById("tipPercent").value);
             let toShow = "";
-for (let i = 0; i < 5; i++) {
+
+            for (let i = 0; i < 5; i++) {
                 const tipAmount = (baseAmount * (tipPercent + i * 4)) / 100;
-                toShow += `${tipPercent + i * 4}% is ${tipAmount.toFixed(2)}; `;
+                // Format the tip amount using the formatNumber function
+                const formattedTipAmount = formatNumber(tipAmount.toFixed(2));
+                toShow += `${tipPercent + i * 4}% is ${formattedTipAmount}; `;
             }
 
-            const resultElement = document.getElementById("result");
-            resultElement.innerHTML = "Tips are: " + toShow;
+            const tipResultElement = document.getElementById("tipResult");
+            tipResultElement.innerHTML = "Tips are:<br>" + toShow;
+        }
+
+        function chooseOp() {
+            const baseAmount = parseFloat(document.getElementById("baseAmount").value);
+            const tipPercent = parseFloat(document.getElementById("tipPercent").value);
+            let operation = "";
+
+            // Get the selected radio button value
+            const radios = document.getElementsByName("calculation");
+            for (let i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    operation = radios[i].value;
+                    break;
+                }
+            }
+
+            let result = "";
+
+            switch (operation) {
+                case "sum":
+                    result = `Sum of ${baseAmount} and ${tipPercent} is ${baseAmount + tipPercent}`;
+                    break;
+                case "difference":
+                    result = `Difference between ${baseAmount} and ${tipPercent} is ${baseAmount - tipPercent}`;
+                    break;
+                case "product":
+                    result = `Product of ${baseAmount} and ${tipPercent} is ${baseAmount * tipPercent}`;
+                    break;
+                default:
+                    result = "Select an operation.";
+            }
+
+            const operationResultElement = document.getElementById("operationResult");
+            operationResultElement.innerHTML = "Result:<br>" + result;
+            operationResultElement.style.display = "block";
         }
     </script>
-
-
-
-</script>
 </body>
-</html> 
+</html>
