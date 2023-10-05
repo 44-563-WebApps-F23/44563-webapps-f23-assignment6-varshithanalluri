@@ -30,7 +30,7 @@
     <p id="result">Good: 0 | Oops: 0</p>
 
     <div class="image">
-        <img id="Dispimage" src="City2.jpg" alt="City 1" onclick="selectImage()">   
+        <img id="Dispimage" src="City2.jpg" alt="City" onclick="selectImage()">   
     </div>
 
     <script>
@@ -42,10 +42,8 @@
         function checkAuthor() {
             
             const secretValue = document.getElementById("secretInput").value;
-
-            
+         
             const userGuess = document.getElementById("guessInput").value;
-
             
             if (userGuess === secretValue) {
                 good++;
@@ -63,7 +61,7 @@
         
         function selectImage() {
             var image = document.getElementById("Dispimage");
-            useImage++;
+            
             switch (useImage) {
                 case 1:
                     image.src = "City3.jpg";
