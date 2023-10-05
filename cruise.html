@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cruise</title>
+</head>
+
+<body>
+    <h2>Nalluri Goes on a Cruise</h2>
+    <form id="cruiseForm">
+        <div>
+            <label for="sharesCabin">Shares Cabin</label>
+            <input type="checkbox" id="sharesCabin" value="True">
+        </div>
+        <div>
+            <label for="breakfast">Breakfast</label>
+            <input type="checkbox" id="breakfast" value="True">
+        </div>
+        <div>
+            <label for="poolPass">Pool Pass</label>&nbsp;
+            <input type="checkbox" id="poolPass" value="False">
+        </div>
+    </form>
+    <br>
+    <input type="button" value="Select a cruise" onclick="selectCruise()"><br>
+
+    <p id="cruiseResult"></p>
+   
+    <br>
+    <form id="updateForm">
+        <label for="propertyName">Enter number of days:</label>
+        <br>
+        <input type="text" id="propertyName" value="days">
+        <br>
+        
+        <label for="cruisePrice">Enter price:</label>
+        <br>
+        <input type="text" id="cruisePrice">
+        <br>
+        <br>
+        <input type="button" onclick="updateCruise()" value="Update the cruise">
+    </form>
+
+    <p id="cruiseUpdateResult"></p>
+
+    <script>
+        let my_cruise = {};
+
+        function selectCruise() {
+            
+            my_cruise = {};
+            const sharesCabin = document.getElementById("sharesCabin").checked;
+            const breakfast = document.getElementById("breakfast").checked;
+            const poolPass = document.getElementById("poolPass").checked;
+
+            my_cruise.shared = sharesCabin;
+            my_cruise.breakfast = breakfast;
+            my_cruise.pool = poolPass;
+            const cruiseResultElement = document.getElementById("cruiseResult");
+            cruiseResultElement.innerHTML = JSON.stringify(my_cruise);
+        }
+
+        function updateCruise() {
+            const propertyName = document.getElementById("propertyName").value;
+            const cruisePrice = document.getElementById("cruisePrice").value;
+
+            my_cruise[propertyName] = cruisePrice;
+
+            const cruiseUpdateResultElement = document.getElementById("cruiseUpdateResult");
+            cruiseUpdateResultElement.innerHTML = JSON.stringify(my_cruise);
+        }
+    </script>
+</body>
+
+</html>
